@@ -1,4 +1,4 @@
-var journald_lib = require('./build/Release/journald')
+var journald_lib = require('./build/Release/journald_lib')
 
 module.exports = {
 
