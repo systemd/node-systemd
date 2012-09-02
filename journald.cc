@@ -8,7 +8,7 @@
 using namespace std;
 using namespace v8;
 
-Handle<Value> Method(const Arguments& args) {
+Handle<Value> SdJournalSend(const Arguments& args) {
   HandleScope scope;
   int argc = args.Length();
   struct iovec *iov = NULL;
@@ -49,8 +49,7 @@ Handle<Value> Method(const Arguments& args) {
 }
 
 void init(Handle<Object> target) {
-  target->Set(String::NewSymbol("send"),
-      FunctionTemplate::New(Method)->GetFunction());
+  target->Set(String::NewSymbol("send"), FunctionTemplate::New(SdJournalSend)->GetFunction());
 }
 
 NODE_MODULE(journald, init)
