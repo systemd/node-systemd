@@ -1,27 +1,19 @@
 #include <node.h>
 #include <v8.h>
 #include <systemd/sd-journal.h>
-#include <stdio.h>
 #include <stdlib.h>
-#include <iostream>
 
 using namespace std;
 using namespace v8;
 
+/**
+ * Log string messages to the journal. Type checking of the arguments is performed
+ * in the journald.js module.
+ */
 Handle<Value> SdJournalSend(const Arguments& args) {
   HandleScope scope;
   int argc = args.Length();
   struct iovec *iov = NULL;
-
-  if (argc < 1) {
-    return ThrowException(String::New("No arguments given"));
-  }
-
-  for (int i = 0; i < argc; ++i) {
-    if (!args[i]->IsString()) {
-      return ThrowException(String::New("Non-string argument given"));
-    }
-  }
 
   iov = (iovec*) malloc(argc * sizeof(struct iovec));
   if (!iov) {
