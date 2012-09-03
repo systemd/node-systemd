@@ -37,7 +37,7 @@ Handle<Value> SdJournalSend(const Arguments& args) {
   }
   free(iov);
 
-  return scope.Close(Integer::New(1));
+  return scope.Close(Undefined());
 }
 
 void init(Handle<Object> target) {
