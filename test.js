@@ -1,9 +1,16 @@
 var journald = require('./journald')
 
-journald.send('MESSAGE=strings sent individually', 'ARG1=as arguments');
+var callback = function(err, result) {
+  console.warn(result);
+}
 
-journald.send({
-  MESSAGE: 'hello world',
-  ARG1: 'first argument here',
-  ARG2: 'second argument here'
-});
+journald.log('MESSAGE=strings sent individually', 'ARG1=as arguments');
+
+journald.log({
+    MESSAGE: 'hello world',
+    ARG1: 'first argument here',
+    ARG2: 'second argument here',
+    ARG3: 'another one'
+  },
+  callback
+);
