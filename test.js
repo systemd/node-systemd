@@ -1,4 +1,4 @@
-var journald = require('./journald')
+var journald = require('./lib/journald')
 
 var callback = function(err, result) {
   console.warn(result);
