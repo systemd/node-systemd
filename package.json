@@ -4,5 +4,15 @@
   "name": "journald",
   "author": "Mark Theunissen",
   "homepage": "https://github.com/systemd/node-systemd",
-  "main": "./lib/journald"
+  "directories": ["./lib", "./src"],
+  "main": "./lib/journald",
+
+  "dependencies": {
+    "winston": "*"
+  },
+
+  "scripts": {
+    "preinstall": "node-gyp clean && node-gyp configure",
+    "install": "node-gyp build"
+  }
 }

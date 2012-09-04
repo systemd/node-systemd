@@ -146,4 +146,4 @@ void init(Handle<Object> target) {
   target->Set(String::NewSymbol("send"), FunctionTemplate::New(SdJournalSend)->GetFunction());
 }
 
-NODE_MODULE(journald_lib, init)
+NODE_MODULE(journald_cpp, init)
