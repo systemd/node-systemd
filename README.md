@@ -44,3 +44,10 @@ Quick way to view output with all fields as it comes in:
     sudo journalctl -f --output=json
 
 [0]: https://github.com/flatiron/winston
+
+LICENSE
+-------
+
+(c) 2012 Mark Theunissen
+
+MIT (EXPAT)

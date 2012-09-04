@@ -1,3 +1,13 @@
+/**
+ * Native extension that logs to the systemd journal asyncronously. It also
+ * supports a sync mode but that isn't yet implemented in the journald.js
+ * lib.
+ *
+ * (C) 2012 Mark Theunissen
+ * MIT (EXPAT) LICENCE
+ *
+ */
+
 #include <node.h>
 #include <v8.h>
 #include <systemd/sd-journal.h>
