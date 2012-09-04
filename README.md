@@ -1,5 +1,5 @@
 node-systemd
-============
+------------
 
 Node.js module for native access to the journald facilities in recent
 versions of systemd. In particular, this capability includes passing
@@ -8,7 +8,7 @@ key/value pairs as fields that journald can use for filtering.
 Also includes a plugin for [winston][0]
 
 Usage
------
+=====
 
 Very basic (see test.js for more detailed example):
 
@@ -18,7 +18,7 @@ Very basic (see test.js for more detailed example):
 ```
 
 Developing
-----------
+==========
 
 Install node-gyp to build the extension:
 
@@ -37,7 +37,7 @@ Run test app:
     node test.js
 
 Viewing Output
---------------
+==============
 
 Quick way to view output with all fields as it comes in:
 
