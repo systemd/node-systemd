@@ -8,15 +8,17 @@ key/value pairs as fields that journald can use for filtering.
 Also includes a plugin for [winston][0]
 
 Usage
-=====
+-----
+
+Very basic (see test.js for more detailed example):
 
 ``` js
-  var journald = require('journald')
-  journald.send('MESSAGE=hello world', 'ARG1=first_argument', 'ARG2=second_argument');
+  var journald = require('journald').Log;
+  journald.log('MESSAGE=hello world', 'ARG1=first_argument', 'ARG2=second_argument');
 ```
 
 Developing
-==========
+----------
 
 Install node-gyp to build the extension:
 
@@ -35,7 +37,7 @@ Run test app:
     node test.js
 
 Viewing Output
-==============
+--------------
 
 Quick way to view output with all fields as it comes in:
 
