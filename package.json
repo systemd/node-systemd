@@ -1,6 +1,6 @@
 {
   "description": "Log to the systemd journal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "name": "journald",
   "author": "Mark Theunissen",
   "homepage": "https://github.com/systemd/node-systemd",
