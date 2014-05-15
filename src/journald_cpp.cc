@@ -73,7 +73,7 @@ Handle<Value> SdJournalSend(const Arguments& args) {
     baton->iov = iov;
     baton->argc = argc;
 
-    int status = uv_queue_work(uv_default_loop(), &baton->request, AsyncWork, AsyncAfter);
+    int status = uv_queue_work(uv_default_loop(), &baton->request, AsyncWork, (uv_after_work_cb) AsyncAfter);
     assert(status == 0);
   }
   else {
