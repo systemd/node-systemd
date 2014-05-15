@@ -28,11 +28,10 @@ winston.log('error', 'MESSAGE=Multiple messages can be sent', {
 var transport_instance = new (journald_transport.Journald)({
   "default_meta": {"SYSLOG_IDENTIFIER": "test"},
   "priority_map": {"debug": 7, "fatal": 1}
-});
-var log = new (winston.Logger)({transports: [ transport_instance ]});
-log.debug("Something trivial", {ANOTHER_KEY: "ANOTHER_VALUE"});
-log.error("This is bad news", {PRIORITY: "3"});
-log.error("This is a warning", {PRIORITY: "5"});
+})
+var log = new winston.Logger(transports: [ transport_instance ])
+log.debug("Something trivial", {ANOTHER_KEY: "ANOTHER_VALUE"})
+log.fatal("This is bad news")
 
 
 // Now log directly using the journald log, you can pass as many string
