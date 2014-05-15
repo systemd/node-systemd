@@ -41,7 +41,7 @@ Viewing Output
 
 Quick way to view output with all fields as it comes in:
 
-    sudo journalctl -f --output=json-pretty
+    sudo journalctl -f -p7 --output=json-pretty
 
 [0]: https://github.com/flatiron/winston
 

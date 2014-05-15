@@ -26,12 +26,23 @@ winston.log('error', 'MESSAGE=Multiple messages can be sent', {
 // Or, create a winston logger instance, passing in options, i.e.
 // default SYSLOG_IDENTIFIER field, or level-to-priority map.
 var transport_instance = new (journald_transport.Journald)({
-  "default_meta": {"SYSLOG_IDENTIFIER": "test"},
-  "priority_map": {"debug": 7, "fatal": 1}
-})
-var log = new winston.Logger(transports: [ transport_instance ])
-log.debug("Something trivial", {ANOTHER_KEY: "ANOTHER_VALUE"})
-log.fatal("This is bad news")
+  default_meta: {"SYSLOG_IDENTIFIER": "test"},
+  priority_map: winston.config.syslog.levels,
+  level: "emerg",
+});
+var log = new (winston.Logger)({
+  transports: [ transport_instance ]
+});
+log.setLevels(winston.config.syslog.levels)
+
+log.debug("debug message", {ANOTHER_KEY: "ANOTHER_VALUE"});
+log.info("info message");
+log.notice("notice message");
+log.warning("warning message");
+log.error("error message");
+log.crit("crit message");
+log.alert("alert message");
+log.emerg("emerg message");
 
 
 // Now log directly using the journald log, you can pass as many string
