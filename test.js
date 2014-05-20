@@ -44,6 +44,21 @@ log.crit("crit message");
 log.alert("alert message");
 log.emerg("emerg message");
 
+// Log non-string data. Will call JSON.stringify() on the non-string
+// properties. The following results in:
+// "DATA" : "1"
+// "VARS" : "{\"a\":33,\"b\":[3,4,5,6]}"
+// "MYFUNC" : "undefined"
+log.error("Non string data", {
+  'data': 1,
+  vars: {
+    a: 33,
+    b: [3,4,5,6]
+  },
+  myfunc: function() {
+    return;
+  }
+});
 
 // Now log directly using the journald log, you can pass as many string
 // parameters as you like.
