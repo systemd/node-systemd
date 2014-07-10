@@ -5,6 +5,8 @@ Node.js module for native access to the journald facilities in recent
 versions of systemd. In particular, this capability includes passing
 key/value pairs as fields that journald can use for filtering.
 
+This should normally be installed using [npm]
+
 Also includes a plugin for [winston][0]
 
 Usage
@@ -44,6 +46,7 @@ Quick way to view output with all fields as it comes in:
     sudo journalctl -f -p7 --output=json-pretty
 
 [0]: https://github.com/flatiron/winston
+[1]: https://www.npmjs.org/package/journald
 
 LICENSE
 -------
