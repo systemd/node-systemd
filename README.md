@@ -5,7 +5,7 @@ Node.js module for native access to the journald facilities in recent
 versions of systemd. In particular, this capability includes passing
 key/value pairs as fields that journald can use for filtering.
 
-This should normally be installed using [npm]
+This should normally be installed using [npm][1]
 
 Also includes a plugin for [winston][0]
 
